@@ -237,4 +237,4 @@ const Contact = () => {
   );
 };
 
-export default Contact.jsx;
+export default Contact;

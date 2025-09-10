@@ -120,4 +120,4 @@ const Navigation = ({ scrolled }) => {
   );
 };
 
-export default Navigation;
+export default Navigation.jsx;

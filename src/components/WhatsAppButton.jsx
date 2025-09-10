@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, X } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 const WhatsAppButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,6 +30,7 @@ const WhatsAppButton = () => {
             </div>
           )}
           
+          <a
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"

@@ -193,4 +193,4 @@ const EmotionBarometer = ({ onEmotionSelect }) => {
   );
 };
 
-export default EmotionBarometer;
+export default EmotionBarometer.jsx;

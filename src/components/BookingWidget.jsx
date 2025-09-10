@@ -137,4 +137,4 @@ const BookingWidget = () => {
   );
 };
 
-export default BookingWidget.jsx;
+export default BookingWidget;

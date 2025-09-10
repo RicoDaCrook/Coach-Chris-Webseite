@@ -227,4 +227,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials.jsx;
+export default Testimonials;

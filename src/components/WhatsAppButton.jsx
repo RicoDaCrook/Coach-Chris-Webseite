@@ -46,4 +46,4 @@ const WhatsAppButton = () => {
   );
 };
 
-export default WhatsAppButton.jsx;
+export default WhatsAppButton;

@@ -176,4 +176,4 @@ const Footer = () => {
   );
 };
 
-export default Footer.jsx;
+export default Footer;

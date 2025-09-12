@@ -26,11 +26,10 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Brand Section */}
+          {/* Brand Section - NUR LOGO OHNE TEXT */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="mb-4">
               <img src={logo} alt="Coach Chris Logo" className="h-10 w-auto" />
-              <span className="text-gold font-serif text-xl">Coach Chris</span>
             </div>
             <p className="text-gray-400 text-sm mb-4">
               Dein Begleiter für Klarheit, Struktur und Neuanfang nach der Trennung.
@@ -96,28 +95,20 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact & Legal */}
+          {/* Contact & Legal - MIT IMPRESSUM DATEN */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Kontakt & Rechtliches</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="mailto:kontakt@coachchrisberatung.de" className="text-gray-400 hover:text-gold transition-colors text-sm">
-                  kontakt@coachchrisberatung.de
-                </a>
-              </li>
-              <li className="text-gray-400 text-sm">
-                Deutschlandweit - Online
-              </li>
-              <li className="text-gray-400 text-sm">
-                24h Antwortzeit
-              </li>
-            </ul>
+            <h4 className="text-white font-semibold mb-4">Impressum</h4>
+            <div className="text-gray-400 text-sm space-y-1">
+              <p>Coach Chris Beratung</p>
+              <p>Schmidenerstr. 210B</p>
+              <p>70374 Stuttgart</p>
+              <p className="mt-2">USt-IdNr: DE355627905</p>
+              <a href="mailto:kontakt@coachchrisberatung.de" className="hover:text-gold transition-colors">
+                kontakt@coachchrisberatung.de
+              </a>
+            </div>
             
             <div className="mt-4 space-y-2">
-              <a href="#impressum" className="text-gray-400 hover:text-gold transition-colors text-sm flex items-center gap-2">
-                <FileText size={14} />
-                Impressum
-              </a>
               <a href="#datenschutz" className="text-gray-400 hover:text-gold transition-colors text-sm flex items-center gap-2">
                 <Shield size={14} />
                 Datenschutz
@@ -130,19 +121,21 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Payment Methods */}
+        {/* Payment Methods - MOBILE FIX */}
         <div className="py-6 border-t border-gray-800 mb-6">
-          <div className="flex flex-wrap items-center justify-center gap-4 text-gray-500 text-sm">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-gray-500 text-sm">
             <span>Sichere Zahlungsmethoden:</span>
             <span className="text-gray-400">PayPal</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span className="text-gray-400">Klarna</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span className="text-gray-400">Kreditkarte</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span className="text-gray-400">Überweisung</span>
-            <span>•</span>
-            <span className="text-gray-400">Ratenzahlung</span>
+            <span className="hidden sm:inline">•</span>
+            <span className="text-gray-400 block sm:inline w-full sm:w-auto text-center sm:text-left">
+              Ratenzahlung möglich
+            </span>
           </div>
         </div>
 
@@ -164,11 +157,11 @@ const Footer = () => {
             <Shield size={14} className="text-gold" />
             SSL-Verschlüsselt
           </span>
-          <span>•</span>
+          <span className="hidden sm:inline">•</span>
           <span>DSGVO-Konform</span>
-          <span>•</span>
+          <span className="hidden sm:inline">•</span>
           <span>6+ Jahre Erfahrung</span>
-          <span>•</span>
+          <span className="hidden sm:inline">•</span>
           <span>100+ zufriedene Klienten</span>
         </div>
       </div>

@@ -40,7 +40,7 @@ function App() {
   };
 
   return (
-    <div className={`min-h-screen text-white transition-all duration-3000 ${getEmotionBackground()}`}>
+    <div className={`min-h-screen text-white transition-all duration-3000 overflow-x-hidden ${getEmotionBackground()}`}>
       {/* Animated Background Particles */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute w-2 h-2 bg-gold/20 rounded-full top-1/4 left-1/4 animate-float"></div>

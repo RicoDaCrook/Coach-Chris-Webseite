@@ -71,7 +71,7 @@ const Services = () => {
       ],
       highlight: false,
       vip: true,
-      color: 'border-purple-500'
+      color: 'border-gold'
     }
   ];
 
@@ -108,22 +108,6 @@ const Services = () => {
             <br />
             <span className="text-sm">Empfohlen sind mindestens 3 Sessions für nachhaltige Veränderung.</span>
           </p>
-        </motion.div>
-
-        {/* Special Offer Banner */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-gold/20 to-gold/10 border border-gold/30 rounded-2xl p-4 mb-12 text-center"
-        >
-          <div className="flex items-center justify-center gap-2">
-            <Gift className="text-gold" size={24} />
-            <p className="text-gold font-semibold">
-              Jedes Paket startet mit einem kostenlosen 30-Minuten Erstgespräch!
-            </p>
-          </div>
         </motion.div>
 
         {/* Einzelstunden */}
@@ -179,10 +163,10 @@ const Services = () => {
                 )}
                 
                 {pkg.vip && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-semibold z-10 flex items-center gap-1">
-                    <Star size={14} fill="white" />
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-dark-gold to-gold text-black px-4 py-1 rounded-full text-sm font-semibold z-10 flex items-center gap-1 whitespace-nowrap">
+                    <Star size={14} fill="black" />
                     PREMIUM 90 MIN
-                    <Star size={14} fill="white" />
+                    <Star size={14} fill="black" />
                   </div>
                 )}
                 
@@ -191,7 +175,7 @@ const Services = () => {
                   border-2 ${pkg.color} ${pkg.highlight ? 'border-gold shadow-gold/20 shadow-2xl' : 'border-gray-700'}
                   hover:shadow-2xl transition-all duration-300 hover:scale-105
                   ${pkg.highlight ? 'bg-gradient-to-br from-dark-gray/80 to-dark-gray/40' : ''}
-                  ${pkg.vip ? 'bg-gradient-to-br from-purple-950/20 to-dark-gray/40' : ''}
+                  ${pkg.vip ? 'bg-gradient-to-br from-gold/10 to-dark-gray/40' : ''}
                 `}>
                   <div className="text-center mb-6">
                     <Icon className="mx-auto mb-4 text-gold" size={48} />
@@ -227,7 +211,7 @@ const Services = () => {
                       ${pkg.highlight 
                         ? 'bg-gold text-black hover:bg-dark-gold' 
                         : pkg.vip
-                        ? 'bg-gradient-to-r from-purple-600 to-gold text-white hover:from-purple-700 hover:to-dark-gold'
+                        ? 'bg-gradient-to-r from-gold to-dark-gold text-black hover:from-dark-gold hover:to-gold'
                         : 'bg-transparent border border-gold text-gold hover:bg-gold hover:text-black'
                       }
                     `}

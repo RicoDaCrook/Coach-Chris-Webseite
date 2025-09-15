@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Clock, Shield, Rocket, Check, Star } from 'lucide-react';
+import { Clock, Shield, Rocket, Check, Star, Phone, MessageSquare, Gift } from 'lucide-react';
 
 const Services = () => {
   const packages = [
@@ -9,15 +9,16 @@ const Services = () => {
       name: 'SOS-AKUTHILFE',
       icon: Shield,
       price: '297€',
-      originalPrice: '447€',
-      duration: '3 x 90 Minuten',
+      originalPrice: '387€',
+      duration: '3 x 60 Minuten',
       description: 'Wenn alles zusammenbricht - Soforthilfe in der akuten Trennungsphase',
       features: [
-        '3 intensive Sessions à 90 Minuten',
-        'WhatsApp-Support für 2 Wochen',
-        'Krisenintervention & Stabilisierung',
-        'Erste konkrete Schritte',
-        'Notfall-Hotline'
+        '30 Min kostenloses Erstgespräch',
+        '3 Coaching-Sessions à 60 Minuten',
+        'Online oder telefonisch',
+        'WhatsApp: bis zu 2 Nachrichten/Woche',
+        'Antwortzeit max. 24h (Mo-Fr)',
+        'Krisenintervention & Stabilisierung'
       ],
       highlight: false,
       color: 'border-blue-500'
@@ -26,17 +27,19 @@ const Services = () => {
       id: 'neustart',
       name: 'NEUSTART-PROGRAMM',
       icon: Rocket,
-      price: '997€',
+      price: '897€',
       originalPrice: '1.192€',
-      duration: '8 x 90 Minuten',
+      duration: '8 x 60 Minuten',
       description: 'Der komplette Weg durch die Trennung - von Schmerz zu neuem Selbst',
       features: [
-        '8 Sessions à 90 Minuten',
-        'WhatsApp-Support für 8 Wochen (Mo-Fr)',
-        '2 Notfall-Calls (je 15 Min)',
-        'Alle Arbeitsblätter & Übungen',
-        'Persönlicher Transformationsplan',
-        'E-Mail Support zwischen Sessions'
+        '30 Min kostenloses Erstgespräch',
+        '8 Coaching-Sessions à 60 Minuten',
+        'Online oder telefonisch',
+        'WhatsApp: bis zu 1 Nachricht/Tag',
+        'Antwortzeit max. 12h (Mo-Fr)',
+        'Notfall-Hotline: 1x/Woche (10 Min)',
+        'Hotline Mo-Fr 9-18 Uhr',
+        'Alle Arbeitsblätter & Übungen'
       ],
       highlight: true,
       popular: true,
@@ -47,35 +50,43 @@ const Services = () => {
       name: 'VIP-TRANSFORMATION',
       icon: Star,
       price: '2.497€',
-      originalPrice: '1.788€',
-      duration: '12 x 90 Minuten',
-      description: 'Intensive 1:1 Begleitung für deine vollständige Transformation',
+      originalPrice: '3.240€',
+      duration: (
+        <span className="flex items-center justify-center gap-2">
+          12 x <span className="text-2xl font-bold text-gold animate-pulse">90</span> Minuten
+        </span>
+      ),
+      description: 'Premium 1:1 Begleitung mit erweiterten Sessions für deine vollständige Transformation',
       features: [
-        '12 Sessions à 90 Minuten',
-        'Täglicher WhatsApp-Support (Mo-Fr, Antwort in 4h)',
-        'Unbegrenzte Notfall-Calls',
+        '30 Min kostenloses Erstgespräch',
+        '12 Premium-Sessions à 90 Minuten',
+        'Online oder telefonisch',
+        'WhatsApp: bis zu 3 Nachrichten/Tag',
+        'Antwortzeit max. 6h (Mo-Fr)',
+        'Notfall-Hotline: 2x/Woche (je 15 Min)',
+        'Hotline Mo-Fr 9-18 Uhr',
         'Personalisiertes Workbook',
-        'Zugang zum Online-Portal',
         'Aufzeichnungen aller Sessions',
         'Lifetime-Zugang zu allen Materialien'
       ],
       highlight: false,
+      vip: true,
       color: 'border-purple-500'
     }
   ];
 
   const einzelStunden = [
     {
-      name: 'Schnupperstunde',
+      name: 'Einzelstunde',
       duration: '60 Minuten',
-      price: '99€',
-      description: 'Zum Kennenlernen'
+      price: '149€',
+      description: 'Für konkrete Themen'
     },
     {
       name: 'Intensiv-Session',
       duration: '90 Minuten',
-      price: '149€',
-      description: 'Für akute Themen'
+      price: '199€',
+      description: 'Tiefgehende Bearbeitung'
     }
   ];
 
@@ -93,9 +104,26 @@ const Services = () => {
             Finde deinen <span className="text-gold">Weg</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Wähle das Paket, das zu deiner Situation passt. 
-            <span className="text-gold font-semibold"> Empfohlen sind mindestens 3 Sessions für nachhaltige Veränderung.</span>
+            Alle Pakete starten mit einem <span className="text-gold font-semibold">kostenlosen 30-Min Erstgespräch</span>.
+            <br />
+            <span className="text-sm">Empfohlen sind mindestens 3 Sessions für nachhaltige Veränderung.</span>
           </p>
+        </motion.div>
+
+        {/* Special Offer Banner */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-r from-gold/20 to-gold/10 border border-gold/30 rounded-2xl p-4 mb-12 text-center"
+        >
+          <div className="flex items-center justify-center gap-2">
+            <Gift className="text-gold" size={24} />
+            <p className="text-gold font-semibold">
+              Jedes Paket startet mit einem kostenlosen 30-Minuten Erstgespräch!
+            </p>
+          </div>
         </motion.div>
 
         {/* Einzelstunden */}
@@ -106,7 +134,7 @@ const Services = () => {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h3 className="text-2xl font-serif text-center mb-6 text-gray-300">Einzelstunden</h3>
+          <h3 className="text-2xl font-serif text-center mb-6 text-gray-300">Einzelstunden (ohne Erstgespräch)</h3>
           <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto mb-8">
             {einzelStunden.map((stunde, index) => (
               <motion.div
@@ -150,11 +178,20 @@ const Services = () => {
                   </div>
                 )}
                 
+                {pkg.vip && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-semibold z-10 flex items-center gap-1">
+                    <Star size={14} fill="white" />
+                    PREMIUM 90 MIN
+                    <Star size={14} fill="white" />
+                  </div>
+                )}
+                
                 <div className={`
                   h-full bg-dark-gray/50 backdrop-blur-sm rounded-2xl p-8 
                   border-2 ${pkg.color} ${pkg.highlight ? 'border-gold shadow-gold/20 shadow-2xl' : 'border-gray-700'}
                   hover:shadow-2xl transition-all duration-300 hover:scale-105
                   ${pkg.highlight ? 'bg-gradient-to-br from-dark-gray/80 to-dark-gray/40' : ''}
+                  ${pkg.vip ? 'bg-gradient-to-br from-purple-950/20 to-dark-gray/40' : ''}
                 `}>
                   <div className="text-center mb-6">
                     <Icon className="mx-auto mb-4 text-gold" size={48} />
@@ -164,14 +201,21 @@ const Services = () => {
                       <span className="text-3xl font-bold text-gold">{pkg.price}</span>
                       <span className="text-gray-500 line-through">{pkg.originalPrice}</span>
                     </div>
-                    <p className="text-sm text-gray-400">{pkg.duration}</p>
+                    <div className="text-sm text-gray-400">{pkg.duration}</div>
                   </div>
                   
                   <ul className="space-y-3 mb-8">
                     {pkg.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start">
-                        <Check className="text-gold mr-2 mt-1 flex-shrink-0" size={16} />
-                        <span className="text-gray-300 text-sm">{feature}</span>
+                        {feature.includes('WhatsApp') && <MessageSquare className="text-gold mr-2 mt-1 flex-shrink-0" size={16} />}
+                        {feature.includes('Hotline') && <Phone className="text-gold mr-2 mt-1 flex-shrink-0" size={16} />}
+                        {feature.includes('kostenloses') && <Gift className="text-gold mr-2 mt-1 flex-shrink-0" size={16} />}
+                        {!feature.includes('WhatsApp') && !feature.includes('Hotline') && !feature.includes('kostenloses') && 
+                          <Check className="text-gold mr-2 mt-1 flex-shrink-0" size={16} />
+                        }
+                        <span className={`text-sm ${feature.includes('90 Minuten') ? 'text-gold font-bold' : 'text-gray-300'}`}>
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -182,6 +226,8 @@ const Services = () => {
                       w-full py-3 rounded-full font-semibold transition-all
                       ${pkg.highlight 
                         ? 'bg-gold text-black hover:bg-dark-gold' 
+                        : pkg.vip
+                        ? 'bg-gradient-to-r from-purple-600 to-gold text-white hover:from-purple-700 hover:to-dark-gold'
                         : 'bg-transparent border border-gold text-gold hover:bg-gold hover:text-black'
                       }
                     `}
@@ -194,7 +240,7 @@ const Services = () => {
           })}
         </div>
 
-        {/* Payment Methods */}
+        {/* Payment Methods - MOBILE FIX */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -203,14 +249,14 @@ const Services = () => {
           className="mt-16 text-center"
         >
           <p className="text-gray-400 mb-4">Sichere Zahlungsmethoden</p>
-          <div className="flex flex-wrap justify-center gap-6 text-gray-500">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-gray-500">
             <span>PayPal</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span>Klarna</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span>Überweisung</span>
-            <span>•</span>
-            <span>Ratenzahlung möglich</span>
+            <span className="hidden sm:inline">•</span>
+            <span className="block sm:inline w-full sm:w-auto">Ratenzahlung möglich</span>
           </div>
         </motion.div>
       </div>

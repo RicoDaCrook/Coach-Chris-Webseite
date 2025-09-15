@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Award, Users, Clock, CheckCircle } from 'lucide-react';
+import logoKlein from '../assets/logoklein.svg';
 
 const About = () => {
   const stats = [
@@ -10,12 +11,13 @@ const About = () => {
     { icon: CheckCircle, label: 'Erfolgsquote', value: '95%' }
   ];
 
+  // KEINE LIZENZPFLICHTIGEN BEGRIFFE
   const qualifications = [
-    'Systemischer Coach',
-    'Paartherapeut',
-    'NLP Practitioner',
-    'Kriseninterventions-Spezialist',
-    'Mediator'
+    'Erfahrener Beziehungsberater',
+    'Spezialist für Trennungsbewältigung',
+    'Experte für Neuorientierung',
+    'Coach für Persönlichkeitsentwicklung',
+    'Krisenbegleiter'
   ];
 
   return (
@@ -81,7 +83,7 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Right Side - Stats & Visual */}
+          {/* Right Side - Stats & Visual - LOGOKLEIN STATT CC */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -89,18 +91,25 @@ const About = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            {/* Abstract Coach Representation */}
+            {/* Logo statt CC Kreise */}
             <div className="relative mx-auto w-full max-w-md">
               <div className="aspect-square rounded-full bg-gradient-to-br from-gold/20 to-transparent p-8">
                 <div className="h-full rounded-full bg-gradient-to-tr from-dark-gray to-black flex items-center justify-center">
-                  <svg viewBox="0 0 200 200" className="w-full h-full">
-                    <circle cx="100" cy="100" r="90" fill="none" stroke="#B8860B" strokeWidth="1" opacity="0.3"/>
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#B8860B" strokeWidth="1" opacity="0.5"/>
-                    <circle cx="100" cy="100" r="50" fill="none" stroke="#B8860B" strokeWidth="2" opacity="0.7"/>
-                    <text x="100" y="100" textAnchor="middle" dominantBaseline="middle" className="text-5xl font-bold fill-gold">
-                      CC
-                    </text>
-                  </svg>
+                  {/* LOGOKLEIN mit Animation */}
+                  <motion.img 
+                    src={logoKlein} 
+                    alt="Coach Chris" 
+                    className="w-32 h-32 object-contain"
+                    animate={{ 
+                      rotate: [0, 5, -5, 0],
+                      scale: [1, 1.1, 1]
+                    }}
+                    transition={{ 
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
                 </div>
               </div>
               

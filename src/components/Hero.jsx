@@ -141,23 +141,29 @@ const Hero = () => {
               <div className="text-2xl font-bold text-gold">6+</div>
               <div className="text-sm">Jahre Erfahrung</div>
             </div>
-            <div className="text-center">
+            <div className="text-center relative">
               <div className="text-2xl font-bold text-gold">100+</div>
               <div className="text-sm">Menschen begleitet</div>
+              {/* PFEIL AUF DESKTOP UNTER 100+ */}
+              <motion.div 
+                className="mt-2 hidden sm:block"
+                animate={{ y: [0, 5, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <ChevronDown className="text-gold/50" size={20} />
+              </motion.div>
             </div>
             <div className="text-center">
-              <div className="flex flex-col items-center">
-                <div className="text-2xl font-bold text-gold">24h</div>
-                <div className="text-sm">Antwortzeit</div>
-                {/* PFEIL DIREKT UNTER ANTWORTZEIT */}
-                <motion.div 
-                  className="mt-2"
-                  animate={{ y: [0, 5, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  <ChevronDown className="text-gold/50" size={20} />
-                </motion.div>
-              </div>
+              <div className="text-2xl font-bold text-gold">24h</div>
+              <div className="text-sm">Antwortzeit</div>
+              {/* PFEIL AUF MOBILE UNTER 24h */}
+              <motion.div 
+                className="mt-2 sm:hidden"
+                animate={{ y: [0, 5, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <ChevronDown className="text-gold/50" size={20} />
+              </motion.div>
             </div>
           </motion.div>
         </motion.div>

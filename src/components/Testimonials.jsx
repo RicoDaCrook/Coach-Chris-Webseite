@@ -169,16 +169,16 @@ const Testimonials = () => {
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation Buttons */}
+          {/* Navigation Buttons - MOBILE FIX: Pfeile nach innen verschieben */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-dark-gray rounded-full p-2 hover:bg-gold hover:text-black transition-all"
+            className="absolute left-0 md:-left-12 top-1/2 -translate-y-1/2 bg-dark-gray rounded-full p-2 hover:bg-gold hover:text-black transition-all"
           >
             <ChevronLeft size={24} />
           </button>
           <button
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-dark-gray rounded-full p-2 hover:bg-gold hover:text-black transition-all"
+            className="absolute right-0 md:-right-12 top-1/2 -translate-y-1/2 bg-dark-gray rounded-full p-2 hover:bg-gold hover:text-black transition-all"
           >
             <ChevronRight size={24} />
           </button>

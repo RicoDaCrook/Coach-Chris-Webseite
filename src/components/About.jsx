@@ -91,15 +91,15 @@ const About = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            {/* Logo statt CC Kreise */}
-            <div className="relative mx-auto w-full max-w-md">
-              <div className="aspect-square rounded-full bg-gradient-to-br from-gold/20 to-transparent p-8">
-                <div className="h-full rounded-full bg-gradient-to-tr from-dark-gray to-black flex items-center justify-center">
-                  {/* LOGOKLEIN mit Animation */}
+            {/* Logo statt CC Kreise - MOBILE OPTIMIERT */}
+            <div className="relative mx-auto w-48 sm:w-64 md:w-full md:max-w-md">
+              <div className="aspect-square rounded-full bg-gradient-to-br from-gold/20 to-transparent p-6 md:p-8">
+                <div className="h-full w-full rounded-full bg-gradient-to-tr from-dark-gray to-black flex items-center justify-center">
+                  {/* LOGOKLEIN mit Animation - RESPONSIVE SIZES */}
                   <motion.img 
                     src={logoKlein} 
                     alt="Coach Chris" 
-                    className="w-32 h-32 object-contain"
+                    className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 object-contain"
                     animate={{ 
                       rotate: [0, 5, -5, 0],
                       scale: [1, 1.1, 1]
@@ -113,9 +113,9 @@ const About = () => {
                 </div>
               </div>
               
-              {/* Floating Elements */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gold/10 rounded-full blur-xl animate-pulse"></div>
-              <div className="absolute bottom-0 left-0 w-16 h-16 bg-gold/10 rounded-full blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
+              {/* Floating Elements - RESPONSIVE */}
+              <div className="absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gold/10 rounded-full blur-xl animate-pulse"></div>
+              <div className="absolute bottom-0 left-0 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gold/10 rounded-full blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
             </div>
 
             {/* Stats Grid */}

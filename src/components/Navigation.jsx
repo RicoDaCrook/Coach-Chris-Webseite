@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import { Menu, X } from 'lucide-react';
+import logo from '../assets/logo.svg';
+import logoKlein from '../assets/logoklein.svg';
 
 const Navigation = ({ scrolled }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,35 +22,24 @@ const Navigation = ({ scrolled }) => {
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo - NUR LOGO OHNE TEXT */}
           <Link 
             to="home" 
             smooth={true} 
             duration={500}
             className="cursor-pointer"
           >
-            <div className="flex items-center space-x-2">
-              <svg 
-                width="40" 
-                height="40" 
-                viewBox="0 0 100 100" 
-                className="fill-gold"
-              >
-                <circle cx="50" cy="50" r="45" fill="none" stroke="#B8860B" strokeWidth="2"/>
-                <text 
-                  x="50" 
-                  y="50" 
-                  textAnchor="middle" 
-                  dominantBaseline="middle" 
-                  className="text-2xl font-bold fill-gold"
-                >
-                  CC
-                </text>
-              </svg>
-              <span className="text-gold font-serif text-xl hidden sm:block">
-                Coach Chris
-              </span>
-            </div>
+            {/* Desktop: Full Logo, Mobile: Small Logo */}
+            <img 
+              src={logo} 
+              alt="Coach Chris" 
+              className="h-10 w-auto hidden sm:block"
+            />
+            <img 
+              src={logoKlein} 
+              alt="Coach Chris" 
+              className="h-10 w-auto sm:hidden"
+            />
           </Link>
 
           {/* Desktop Navigation */}

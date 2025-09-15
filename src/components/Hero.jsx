@@ -146,29 +146,22 @@ const Hero = () => {
               <div className="text-sm">Menschen begleitet</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-gold">24h</div>
-              <div className="text-sm">Antwortzeit</div>
-              {/* PFEIL DIREKT UNTER 24h ANTWORTZEIT ZENTRIERT */}
-              <motion.div 
-                className="mt-2 flex justify-center"
-                animate={{ y: [0, 5, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <ChevronDown className="text-gold/50" size={20} />
-              </motion.div>
+              <div className="flex flex-col items-center">
+                <div className="text-2xl font-bold text-gold">24h</div>
+                <div className="text-sm">Antwortzeit</div>
+                {/* PFEIL DIREKT UNTER ANTWORTZEIT */}
+                <motion.div 
+                  className="mt-2"
+                  animate={{ y: [0, 5, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <ChevronDown className="text-gold/50" size={20} />
+                </motion.div>
+              </div>
             </div>
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator - HAUPTPFEIL UNTEN */}
-      <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <ChevronDown className="text-gold" size={32} />
-      </motion.div>
     </div>
   );
 };

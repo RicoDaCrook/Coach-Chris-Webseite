@@ -66,9 +66,9 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="text-center max-w-4xl mx-auto"
         >
-          {/* Main Headline */}
+          {/* Main Headline - MEHR ABSTAND AUF MOBILE */}
           <motion.h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-serif mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-serif mb-6 mt-20 sm:mt-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -130,7 +130,7 @@ const Hero = () => {
             </Link>
           </motion.div>
 
-          {/* Trust Indicators */}
+          {/* Trust Indicators - MIT PFEIL FIX */}
           <motion.div 
             className="mt-16 flex flex-wrap justify-center items-center gap-8 text-gray-400"
             initial={{ opacity: 0 }}
@@ -148,12 +148,20 @@ const Hero = () => {
             <div className="text-center">
               <div className="text-2xl font-bold text-gold">24h</div>
               <div className="text-sm">Antwortzeit</div>
+              {/* PFEIL DIREKT UNTER 24h ANTWORTZEIT ZENTRIERT */}
+              <motion.div 
+                className="mt-2 flex justify-center"
+                animate={{ y: [0, 5, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <ChevronDown className="text-gold/50" size={20} />
+              </motion.div>
             </div>
           </motion.div>
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - HAUPTPFEIL UNTEN */}
       <motion.div 
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}

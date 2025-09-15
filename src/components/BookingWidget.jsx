@@ -108,7 +108,7 @@ const BookingWidget = () => {
           <div id="sbw_5nb7uz" ref={widgetContainerRef} className="min-h-[600px]"></div>
         </motion.div>
 
-        {/* Payment Methods Info */}
+        {/* Payment Methods Info - MOBILE FIX */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -117,16 +117,16 @@ const BookingWidget = () => {
           className="mt-12 text-center"
         >
           <p className="text-gray-400 mb-4">Verfügbare Zahlungsmethoden</p>
-          <div className="flex flex-wrap justify-center gap-6 text-gray-500">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-gray-500">
             <span>PayPal</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span>Klarna</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span>Kreditkarte</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span>Überweisung</span>
-            <span>•</span>
-            <span>Ratenzahlung möglich</span>
+            <span className="hidden sm:inline">•</span>
+            <span className="block sm:inline w-full sm:w-auto">Ratenzahlung möglich</span>
           </div>
           <p className="text-sm text-gray-600 mt-4">
             Hinweis: Termine werden erst nach Zahlungseingang final bestätigt

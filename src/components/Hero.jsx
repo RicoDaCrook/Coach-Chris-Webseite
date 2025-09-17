@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Shield, Clock, X } from 'lucide-react';
 
 const Hero = () => {
   const canvasRef = useRef(null);
@@ -103,39 +103,85 @@ const Hero = () => {
             durch deine herausforderndste Zeit
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons - ERSTGESPRÄCH PROMINENT */}
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            <Link
-              to="buchen"
-              smooth={true}
-              duration={500}
-              className="group relative px-8 py-4 bg-gold text-black font-semibold rounded-full cursor-pointer overflow-hidden hover:scale-105 transition-transform"
-            >
-              <span className="relative z-10">Kostenloses Erstgespräch</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-dark-gold to-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-            </Link>
+            {/* HAUPTBUTTON MIT BADGE */}
+            <div className="relative">
+              {/* KOSTENLOS BADGE */}
+              <motion.div 
+                className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-1.5 rounded-full text-xs font-bold z-10 shadow-lg"
+                animate={{ 
+                  scale: [1, 1.05, 1],
+                  rotate: [-2, 2, -2]
+                }}
+                transition={{ 
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                ⭐ 100% KOSTENLOS ⭐
+              </motion.div>
+              
+              <Link
+                to="buchen"
+                smooth={true}
+                duration={500}
+                className="group relative px-12 py-6 bg-gradient-to-r from-gold to-dark-gold text-black font-bold rounded-full cursor-pointer overflow-hidden hover:scale-105 transition-all shadow-2xl hover:shadow-gold/50"
+              >
+                <span className="relative z-10 text-xl">
+                  Kostenloses Erstgespräch
+                  <span className="block text-sm font-normal mt-1 opacity-90">
+                    30 Minuten • Unverbindlich • Heute noch Termine frei
+                  </span>
+                </span>
+              </Link>
+            </div>
             
             <Link
               to="gefuehlsbarometer"
               smooth={true}
               duration={500}
-              className="px-8 py-4 border-2 border-gold text-gold font-semibold rounded-full cursor-pointer hover:bg-gold hover:text-black transition-all"
+              className="px-8 py-4 border-2 border-gold/50 text-gold font-semibold rounded-full cursor-pointer hover:bg-gold hover:text-black transition-all"
             >
               Wie geht es mir?
             </Link>
           </motion.div>
 
-          {/* Trust Indicators - OHNE PFEIL */}
+          {/* TRUST-SIGNALE UNTER BUTTONS */}
+          <motion.div
+            className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-gray-400"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+          >
+            <span className="flex items-center gap-2">
+              <Shield size={16} className="text-gold" />
+              100% vertraulich
+            </span>
+            <span className="hidden sm:inline">•</span>
+            <span className="flex items-center gap-2">
+              <Clock size={16} className="text-gold" />
+              Termine in 3-5 Tagen
+            </span>
+            <span className="hidden sm:inline">•</span>
+            <span className="flex items-center gap-2">
+              <X size={16} className="text-gold" />
+              Keine Verpflichtung
+            </span>
+          </motion.div>
+
+          {/* Trust Indicators */}
           <motion.div 
             className="mt-16 flex flex-wrap justify-center items-center gap-8 text-gray-400"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
+            transition={{ duration: 1, delay: 1 }}
           >
             <div className="text-center">
               <div className="text-2xl font-bold text-gold">6+</div>
@@ -145,11 +191,9 @@ const Hero = () => {
               <div className="text-2xl font-bold text-gold">100+</div>
               <div className="text-sm">Menschen begleitet</div>
             </div>
-            {/* Auf Desktop normale Darstellung, auf Mobile mit Pfeil */}
             <div className="text-center flex flex-col items-center sm:block">
               <div className="text-2xl font-bold text-gold">24h</div>
               <div className="text-sm">Antwortzeit</div>
-              {/* PFEIL NUR AUF MOBILE */}
               <motion.div 
                 className="mt-2 sm:hidden"
                 animate={{ y: [0, 5, 0] }}

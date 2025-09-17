@@ -1,10 +1,13 @@
 import React from 'react';
-import { Link } from 'react-scroll';
-import { Instagram, Youtube, Mail, Shield, FileText, Heart } from 'lucide-react';
+import { Link as ScrollLink } from 'react-scroll';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { Instagram, Youtube, Mail, Shield, FileText, Heart, Code } from 'lucide-react';
 import logo from '../assets/logo.svg';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const isLandingPage = location.pathname === '/';
 
   const quickLinks = [
     { name: 'Start', to: 'home' },
@@ -14,19 +17,31 @@ const Footer = () => {
   ];
 
   const services = [
-    'Schnupperstunde - 60 Min',
+    'Kostenloses Erstgespräch - 30 Min',
+    'Einzelstunde - 60 Min',
     'Intensiv-Session - 90 Min',
     'SOS-AKUTHILFE - 3 Sessions',
     'NEUSTART-PROGRAMM - 8 Sessions',
     'VIP-TRANSFORMATION - 12 Sessions'
   ];
 
+  // Agency tracking function
+  const handleAgencyClick = () => {
+    if (window.gtag) {
+      window.gtag('event', 'agency_link_click', {
+        'event_category': 'portfolio',
+        'event_label': 'Coach Chris Beratung',
+        'from_page': location.pathname
+      });
+    }
+  };
+
   return (
     <footer className="bg-black border-t border-gray-800">
       <div className="container mx-auto px-4 py-12">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Brand Section - NUR LOGO OHNE TEXT */}
+          {/* Brand Section */}
           <div>
             <div className="mb-4">
               <img src={logo} alt="Coach Chris Logo" className="h-10 w-auto" />
@@ -67,19 +82,30 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-4">Navigation</h4>
             <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.to}>
-                  <Link
-                    to={link.to}
-                    smooth={true}
-                    duration={500}
-                    offset={-80}
-                    className="text-gray-400 hover:text-gold transition-colors cursor-pointer text-sm"
+              {isLandingPage ? (
+                quickLinks.map((link) => (
+                  <li key={link.to}>
+                    <ScrollLink
+                      to={link.to}
+                      smooth={true}
+                      duration={500}
+                      offset={-80}
+                      className="text-gray-400 hover:text-gold transition-colors cursor-pointer text-sm"
+                    >
+                      {link.name}
+                    </ScrollLink>
+                  </li>
+                ))
+              ) : (
+                <li>
+                  <RouterLink
+                    to="/"
+                    className="text-gray-400 hover:text-gold transition-colors text-sm"
                   >
-                    {link.name}
-                  </Link>
+                    Zur Startseite
+                  </RouterLink>
                 </li>
-              ))}
+              )}
             </ul>
           </div>
 
@@ -95,11 +121,12 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact & Legal - MIT IMPRESSUM DATEN */}
+          {/* Contact & Legal */}
           <div>
             <h4 className="text-white font-semibold mb-4">Impressum</h4>
             <div className="text-gray-400 text-sm space-y-1">
               <p>Coach Chris Beratung</p>
+              <p>Marcus Zöllmann</p>
               <p>Schmidenerstr. 210B</p>
               <p>70374 Stuttgart</p>
               <p className="mt-2">USt-IdNr: DE355627905</p>
@@ -109,19 +136,25 @@ const Footer = () => {
             </div>
             
             <div className="mt-4 space-y-2">
-              <a href="#datenschutz" className="text-gray-400 hover:text-gold transition-colors text-sm flex items-center gap-2">
+              <RouterLink 
+                to="/datenschutz" 
+                className="text-gray-400 hover:text-gold transition-colors text-sm flex items-center gap-2"
+              >
                 <Shield size={14} />
                 Datenschutz
-              </a>
-              <a href="#agb" className="text-gray-400 hover:text-gold transition-colors text-sm flex items-center gap-2">
+              </RouterLink>
+              <RouterLink 
+                to="/agb" 
+                className="text-gray-400 hover:text-gold transition-colors text-sm flex items-center gap-2"
+              >
                 <FileText size={14} />
                 AGB
-              </a>
+              </RouterLink>
             </div>
           </div>
         </div>
 
-        {/* Payment Methods - MOBILE FIX */}
+        {/* Payment Methods */}
         <div className="py-6 border-t border-gray-800 mb-6">
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-gray-500 text-sm">
             <span>Sichere Zahlungsmethoden:</span>
@@ -139,15 +172,29 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar mit Agency Credit */}
         <div className="pt-6 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-sm">
               © {currentYear} Coach Chris Beratung. Alle Rechte vorbehalten.
             </p>
-            <p className="text-gray-500 text-sm flex items-center gap-1">
-              Made with <Heart size={14} className="text-gold" fill="#B8860B" /> für Menschen in Veränderung
-            </p>
+            <div className="flex flex-col sm:flex-row items-center gap-4 text-sm">
+              <p className="text-gray-500 flex items-center gap-1">
+                Made with <Heart size={14} className="text-gold" fill="#B8860B" /> für Menschen in Veränderung
+              </p>
+              {/* VIDEONEERS CREDIT */}
+              <a 
+                href="https://videoneers.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleAgencyClick}
+                data-agency-link
+                className="text-gray-600 hover:text-gold transition-colors flex items-center gap-1 group"
+              >
+                <Code size={14} className="group-hover:rotate-12 transition-transform" />
+                Website by Videoneers
+              </a>
+            </div>
           </div>
         </div>
 

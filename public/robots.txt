@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://coachchrisberatung.de/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow private areas (falls vorhanden)
+# Disallow: /admin/
+# Disallow: /private/

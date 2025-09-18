@@ -114,7 +114,7 @@ const Hero = () => {
             <div className="relative">
               {/* KOSTENLOS BADGE */}
               <motion.div 
-                className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-1.5 rounded-full text-xs font-bold z-10 shadow-lg"
+                className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-1.5 rounded-full text-xs font-bold z-10 shadow-lg whitespace-nowrap"
                 animate={{ 
                   scale: [1, 1.05, 1],
                   rotate: [-2, 2, -2]

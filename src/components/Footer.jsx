@@ -54,7 +54,7 @@ const Footer = () => {
                 href="https://www.instagram.com/coachchrisberatung"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-black transition-all"
+                className="w-10 h-10 bg-white/10 text-white rounded-full flex items-center justify-center hover:bg-gold hover:text-black transition-all"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
@@ -63,14 +63,14 @@ const Footer = () => {
                 href="https://www.youtube.com/@CoachChrisBeratung"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-black transition-all"
+                className="w-10 h-10 bg-white/10 text-white rounded-full flex items-center justify-center hover:bg-gold hover:text-black transition-all"
                 aria-label="YouTube"
               >
                 <Youtube size={18} />
               </a>
               <a
                 href="mailto:kontakt@coachchrisberatung.de"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-black transition-all"
+                className="w-10 h-10 bg-white/10 text-white rounded-full flex items-center justify-center hover:bg-gold hover:text-black transition-all"
                 aria-label="E-Mail"
               >
                 <Mail size={18} />

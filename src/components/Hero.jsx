@@ -110,38 +110,20 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            {/* HAUPTBUTTON MIT BADGE */}
-            <div className="relative">
-              {/* KOSTENLOS BADGE */}
-              <motion.div 
-                className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-1.5 rounded-full text-xs font-bold z-10 shadow-lg whitespace-nowrap"
-                animate={{ 
-                  scale: [1, 1.05, 1],
-                  rotate: [-2, 2, -2]
-                }}
-                transition={{ 
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                ⭐ 100% KOSTENLOS ⭐
-              </motion.div>
-              
-              <Link
-                to="buchen"
-                smooth={true}
-                duration={500}
-                className="group relative px-12 py-6 bg-gradient-to-r from-gold to-dark-gold text-black font-bold rounded-full cursor-pointer overflow-hidden hover:scale-105 transition-all shadow-2xl hover:shadow-gold/50"
-              >
-                <span className="relative z-10 text-xl">
-                  Kostenloses Erstgespräch
-                  <span className="block text-sm font-normal mt-1 opacity-90">
-                    30 Minuten • Unverbindlich • Heute noch Termine frei
-                  </span>
+            {/* HAUPTBUTTON OHNE BADGE */}
+            <Link
+              to="buchen"
+              smooth={true}
+              duration={500}
+              className="group relative px-12 py-6 bg-gradient-to-r from-gold to-dark-gold text-black font-bold rounded-full cursor-pointer overflow-hidden hover:scale-105 transition-all shadow-2xl hover:shadow-gold/50"
+            >
+              <span className="relative z-10 text-xl">
+                Kostenloses Erstgespräch
+                <span className="block text-sm font-normal mt-1 opacity-90">
+                  30 Minuten • Unverbindlich • 100% kostenlos
                 </span>
-              </Link>
-            </div>
+              </span>
+            </Link>
             
             <Link
               to="gefuehlsbarometer"

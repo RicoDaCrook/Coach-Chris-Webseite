@@ -12,18 +12,34 @@ const Contact = () => {
     isAnonymous: false
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here would be the actual form submission logic
-    toast.success('Nachricht gesendet! Ich melde mich innerhalb von 24h bei dir.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: '',
-      isAnonymous: false
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+  try {
+    const response = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
     });
-  };
+    
+    if (response.ok) {
+      toast.success('Nachricht gesendet! Ich melde mich innerhalb von 24h bei dir.');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        isAnonymous: false
+      });
+    } else {
+      toast.error('Fehler beim Senden. Bitte versuche es später nochmal.');
+    }
+  } catch (error) {
+    toast.error('Fehler beim Senden. Bitte versuche es später nochmal.');
+  }
+};
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;

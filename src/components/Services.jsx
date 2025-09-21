@@ -118,7 +118,7 @@ const Services = () => {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h3 className="text-2xl font-serif text-center mb-6 text-gray-300">Einzelstunden (ohne Erstgespräch)</h3>
+          <h3 className="text-2xl font-serif text-center mb-6 text-gray-300">Einzelstunden</h3>
           <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto mb-8">
             {einzelStunden.map((stunde, index) => (
               <motion.div

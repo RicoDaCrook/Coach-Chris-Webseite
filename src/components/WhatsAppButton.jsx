@@ -6,7 +6,7 @@ const WhatsAppButton = () => {
   const [showTooltip, setShowTooltip] = useState(false);
   
   // Placeholder WhatsApp number - replace when real number is available
-  const whatsappNumber = '+491234567890';
+  const whatsappNumber = '+4915223080461';
   const message = 'Hallo Coach Chris, ich würde gerne ein Erstgespräch vereinbaren.';
   const whatsappLink = `https://wa.me/${whatsappNumber.replace(/[^\d]/g, '')}?text=${encodeURIComponent(message)}`;
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
-import { Instagram, Youtube, Mail, Shield, FileText, Heart, Code } from 'lucide-react';
+import { Instagram, Youtube, Mail, Shield, FileText, Code } from 'lucide-react';
 import logo from '../assets/logo.svg';
 
 const Footer = () => {
@@ -180,7 +180,7 @@ const Footer = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 text-sm">
               <p className="text-gray-500 flex items-center gap-1">
-                Made with <Heart size={14} className="text-gold" fill="#B8860B" /> für Menschen in Veränderung
+                Mit Hingabe für Menschen in Veränderung erstellt
               </p>
               {/* VIDEONEERS CREDIT */}
               <a 

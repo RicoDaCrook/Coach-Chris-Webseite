@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, Cloud, Flame, Sun, HelpCircle, Smile } from 'lucide-react';
+import { Cloud, Flame, Sun, HelpCircle, Smile, Compass } from 'lucide-react';
 
 const EmotionBarometer = ({ onEmotionSelect }) => {
   const [selectedEmotion, setSelectedEmotion] = useState(null);
@@ -58,7 +58,7 @@ const EmotionBarometer = ({ onEmotionSelect }) => {
     {
       id: 'unsicher',
       label: 'Unsicher',
-      icon: Heart,
+      icon: Compass,
       color: 'from-indigo-600 to-indigo-900',
       glow: 'shadow-indigo-500/50',
       response: {

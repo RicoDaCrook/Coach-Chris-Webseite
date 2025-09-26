@@ -14,6 +14,7 @@ const Navigation = ({ scrolled }) => {
     { name: 'Start', to: 'home' },
     { name: 'Gefühlsbarometer', to: 'gefuehlsbarometer' },
     { name: 'Angebot', to: 'angebot' },
+    { name: 'Erste-Hilfe-Kit', to: 'erste-hilfe-kit' },
     { name: 'Über mich', to: 'ueber-mich' },
     { name: 'Erfahrungen', to: 'erfahrungen' },
     { name: 'Kontakt', to: 'kontakt' },

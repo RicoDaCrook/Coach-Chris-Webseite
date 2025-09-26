@@ -67,22 +67,37 @@ const Hero = () => {
           className="text-center max-w-4xl mx-auto"
         >
           {/* Main Headline - MEHR ABSTAND AUF MOBILE */}
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-6xl lg:text-7xl font-serif mb-6 mt-20 sm:mt-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            Wenn sich Wege{' '}
-            <span className="text-gold inline-block animate-pulse">trennen</span>,
+            <span className="whitespace-nowrap">
+              Wenn sich Wege{' '}
+              <motion.span
+                className="text-gold inline-block animate-pulse"
+                animate={{
+                  opacity: [1, 0.7, 1],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                trennen
+              </motion.span>
+              ,
+            </span>
             <br />
             beginnt dein{' '}
-            <motion.span 
+            <motion.span
               className="text-gold"
-              animate={{ 
+              animate={{
                 opacity: [1, 0.7, 1],
               }}
-              transition={{ 
+              transition={{
                 duration: 3,
                 repeat: Infinity,
                 ease: "easeInOut"
@@ -115,12 +130,14 @@ const Hero = () => {
               to="buchen"
               smooth={true}
               duration={500}
-              className="group relative px-12 py-6 bg-gradient-to-r from-gold to-dark-gold text-black font-bold rounded-full cursor-pointer overflow-hidden hover:scale-105 transition-all shadow-2xl hover:shadow-gold/50"
+              className="group relative px-8 py-4 bg-gradient-to-r from-gold to-dark-gold text-black font-bold rounded-full cursor-pointer overflow-hidden hover:scale-105 transition-all shadow-2xl hover:shadow-gold/50"
             >
-              <span className="relative z-10 text-xl">
+              <span className="relative z-10 text-lg">
                 Kostenloses Erstgespräch
-                <span className="block text-sm font-normal mt-1 opacity-90">
-                  30 Minuten • Unverbindlich • 100% kostenlos
+                <span className="block text-xs font-normal mt-1 opacity-90">
+                  30 Minuten • Unverbindlich
+                  <br className="sm:hidden" />
+                  <span className="sm:inline"> • </span>100% kostenlos
                 </span>
               </span>
             </Link>

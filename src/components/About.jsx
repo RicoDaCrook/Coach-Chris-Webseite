@@ -94,7 +94,7 @@ const About = () => {
             {/* Logo statt CC Kreise - MOBILE OPTIMIERT */}
             <div className="relative mx-auto w-48 sm:w-64 md:w-full md:max-w-md">
               <div className="aspect-square rounded-full bg-gradient-to-br from-gold/20 to-transparent p-6 md:p-8">
-                <div className="h-full w-full rounded-full bg-gradient-to-tr from-dark-gray to-black flex items-center justify-center">
+                <div className="h-full w-full aspect-square rounded-full bg-gradient-to-tr from-dark-gray to-black flex items-center justify-center">
                   {/* LOGOKLEIN mit Animation - RESPONSIVE SIZES */}
                   <motion.img 
                     src={logoKlein} 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FileDown, Heart } from 'lucide-react';
+import { FileDown, Feather } from 'lucide-react';
 
 const FirstAidKit = () => {
   return (
@@ -17,7 +17,7 @@ const FirstAidKit = () => {
             Sanfter Download
           </span>
           <h2 className="text-4xl md:text-5xl font-serif mt-6 mb-4">
-            Erste Hilfe für dein Herz
+            Erste Hilfe für deinen Neuanfang
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             Ein einseitiges PDF mit ruhigen Impulsen, das dich nach einer Trennung wieder atmen lässt.
@@ -38,7 +38,7 @@ const FirstAidKit = () => {
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
                 <div className="flex items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/15 text-gold">
-                    <Heart size={26} />
+                    <Feather size={26} />
                   </div>
                   <p className="text-gray-300 text-base leading-relaxed max-w-md">
                     Eine kleine Soforthilfe, wenn alles zu viel wird – leicht verständlich, ruhig und wertschätzend.

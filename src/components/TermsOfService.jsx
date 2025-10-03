@@ -1,10 +1,30 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 
 const TermsOfService = () => {
+  const canonicalUrl = 'https://coachchrisberatung.de/agb';
+  const socialImage = 'https://coachchrisberatung.de/og-image.jpg';
+
   return (
     <>
+      <Helmet>
+        <title>Allgemeine Geschäftsbedingungen | Coach Chris Beratung</title>
+        <meta
+          name="description"
+          content="Lies die Allgemeinen Geschäftsbedingungen von Coach Chris Beratung: Informationen zu Leistungen, Buchung, Widerrufsrecht und Haftungsregelungen."
+        />
+        <meta property="og:title" content="Allgemeine Geschäftsbedingungen | Coach Chris Beratung" />
+        <meta
+          property="og:description"
+          content="Transparente AGB für Coaching, Terminregelungen, Preise und Verbraucherrechte bei Coach Chris Beratung."
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={socialImage} />
+        <link rel="canonical" href={canonicalUrl} />
+      </Helmet>
       {/* Back Button */}
       <Link to="/" className="inline-flex items-center gap-2 text-gold hover:text-dark-gold mb-8 transition-colors">
         <ArrowLeft size={20} />

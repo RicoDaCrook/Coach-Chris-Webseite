@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import EmotionBarometer from './components/EmotionBarometer';
@@ -14,6 +15,9 @@ import WhatsAppButton from './components/WhatsAppButton';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import CookieBanner from './components/CookieBanner';
+
+const BASE_URL = 'https://coachchrisberatung.de';
+const SOCIAL_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 // Main Landing Page Component
 function LandingPage() {
@@ -36,7 +40,24 @@ function LandingPage() {
   };
 
   return (
-    <div className={`min-h-screen text-white transition-all duration-3000 overflow-x-hidden ${getEmotionBackground()}`}>
+    <>
+      <Helmet>
+        <title>Coach Chris Beratung | Trennungscoach &amp; Lebensberatung in Stuttgart</title>
+        <meta
+          name="description"
+          content="Coach Chris begleitet dich mit empathischem Trennungscoaching, um emotionale Krisen zu bewältigen, neue Stärke zu finden und selbstbewusst neu zu starten."
+        />
+        <meta property="og:title" content="Coach Chris Beratung | Trennungscoach &amp; Lebensberatung" />
+        <meta
+          property="og:description"
+          content="Ganzheitliches Coaching für Menschen in Trennungssituationen – individuelle Begleitung, Akuthilfe und nachhaltige Transformation."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={BASE_URL} />
+        <meta property="og:image" content={SOCIAL_IMAGE} />
+        <link rel="canonical" href={BASE_URL} />
+      </Helmet>
+      <div className={`min-h-screen text-white transition-all duration-3000 overflow-x-hidden ${getEmotionBackground()}`}>
       {/* Animated Background Particles */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute w-2 h-2 bg-gold/20 rounded-full top-1/4 left-1/4 animate-float"></div>
@@ -78,6 +99,7 @@ function LandingPage() {
         </section>
       </main>
     </div>
+    </>
   );
 }
 

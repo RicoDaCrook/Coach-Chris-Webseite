@@ -1,10 +1,30 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 
 const PrivacyPolicy = () => {
+  const canonicalUrl = 'https://coachchrisberatung.de/datenschutz';
+  const socialImage = 'https://coachchrisberatung.de/og-image.jpg';
+
   return (
     <>
+      <Helmet>
+        <title>Datenschutzerklärung | Coach Chris Beratung</title>
+        <meta
+          name="description"
+          content="Erfahre, wie Coach Chris Beratung personenbezogene Daten schützt: Informationen zu Verantwortlichen, Cookies, Analyse-Tools und deinen Datenschutzrechten."
+        />
+        <meta property="og:title" content="Datenschutzerklärung | Coach Chris Beratung" />
+        <meta
+          property="og:description"
+          content="Alle Informationen zu Datenschutz, Datensicherheit und deinen Rechten bei der Nutzung von Coach Chris Beratung."
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={socialImage} />
+        <link rel="canonical" href={canonicalUrl} />
+      </Helmet>
       {/* Back Button */}
       <Link to="/" className="inline-flex items-center gap-2 text-gold hover:text-dark-gold mb-8 transition-colors">
         <ArrowLeft size={20} />

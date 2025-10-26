@@ -4,6 +4,7 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import EmotionBarometer from './components/EmotionBarometer';
 import Services from './components/Services';
+import FirstAidKit from './components/FirstAidKit';
 import About from './components/About';
 import Testimonials from './components/Testimonials';
 import BookingWidget from './components/BookingWidget';
@@ -55,7 +56,11 @@ function LandingPage() {
         <section id="angebot">
           <Services />
         </section>
-        
+
+        <section id="erste-hilfe-kit">
+          <FirstAidKit />
+        </section>
+
         <section id="ueber-mich">
           <About />
         </section>

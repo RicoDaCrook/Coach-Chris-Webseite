@@ -37,9 +37,10 @@ const BookingWidget = () => {
         "datepicker":"top_calendar",
         "is_rtl":false,
         "app_config":{
-          "clear_session":0,
           "allow_switch_to_ada":0,
-          "predefined":[]
+          "clear_session":0,
+          "predefined":[],
+          "hide_client_login": true
         },
         "container_id":"sbw_5nb7uz"
       });
